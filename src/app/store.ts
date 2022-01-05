@@ -1,9 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import songsReducer from '../features/songSlice';
+import artistReducer from '../features/artistSlice'
+import albumReducer from '../features/albumSlice'
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    songs: songsReducer,
+    artist: artistReducer,
+    album: albumReducer,
   },
 });
 

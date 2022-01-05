@@ -1,0 +1,83 @@
+$bgpath : "../assets/img/lennonmccartney.jpg";
+@use 'profile-img';
+@use 'list-group';
+
+
+#dropdownMenuButton1{
+    margin: 7px;
+}
+
+#homeheader{
+    background: url("../assets/img/lennonmccartney.jpg");
+}
+
+#mainNav{
+    background:white;
+    .navbar-brand {
+        padding: 0.5rem 0;
+        color: #7464a1;
+    }
+    .nav-link{
+        color: #7464a19f;
+        :hover{
+            color:#7464a13f;
+        }
+
+    }
+}
+
+.album-maker{
+    background: #e5e3ec;
+}
+
+
+/*.dropdown-menu.show{
+    //display: flex;
+}*/
+
+.masthead{
+    background-image: url("../assets/img/lennon.jpg");
+    object-fit: cover;
+    h1{
+        background:none;
+        -webkit-text-fill-color: white;
+    }
+
+}
+
+
+
+.albumContainer{
+    background-color: rgba(var(--bs-light-rgb));
+    min-height: 100px;
+    padding: 10px;
+    border-color: #7464a1;
+    border-width: 5px;
+    input{
+        background-color: rgba(var(--bs-light-rgb));
+    }
+}
+
+.singleAlbumContainer{
+  background-image: url("../assets/img/lennon.jpg"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  //height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.albumImage{
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-section{
+    padding-bottom: 10px;
+}
+
+.no-hover:hover{
+    background-color: white;
+}

@@ -1,0 +1,26 @@
+.profile-img{
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    object-fit: cover;
+    
+    &:hover{
+        box-shadow: 0 0 20px #7464a1;
+    }
+    
+
+}
+
+.profile-img-parent{
+    border-style: none;
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+    &:focus{
+        
+        border-color: #7464a1;
+        box-shadow: 0 0 20px #ff4800;
+    }
+    
+}
+
