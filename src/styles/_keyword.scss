@@ -1,0 +1,23 @@
+$round-border: 20px 50px 50px 20px;
+$primary-color: #7464a1;
+
+.keyword{
+    border-radius: 100px;
+    background-color: #67c29c6b;
+
+}
+
+.btn-circle{
+    border-radius: $round-border!important;
+}
+
+.no-borders{
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.keyword-in-album{
+    border-radius: 50px;
+    background-color: $primary-color;
+}

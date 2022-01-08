@@ -1,6 +1,10 @@
 $bgpath : "../assets/img/lennonmccartney.jpg";
 @use 'profile-img';
 @use 'list-group';
+@use 'song-container';
+@use 'keyword';
+
+$primary-color: #7464a1;
 
 
 #dropdownMenuButton1{
@@ -15,7 +19,7 @@ $bgpath : "../assets/img/lennonmccartney.jpg";
     background:white;
     .navbar-brand {
         padding: 0.5rem 0;
-        color: #7464a1;
+        color: $primary-color;
     }
     .nav-link{
         color: #7464a19f;
@@ -51,7 +55,7 @@ $bgpath : "../assets/img/lennonmccartney.jpg";
     background-color: rgba(var(--bs-light-rgb));
     min-height: 100px;
     padding: 10px;
-    border-color: #7464a1;
+    border-color: $primary-color;
     border-width: 5px;
     input{
         background-color: rgba(var(--bs-light-rgb));
@@ -80,4 +84,14 @@ $bgpath : "../assets/img/lennonmccartney.jpg";
 
 .no-hover:hover{
     background-color: white;
+}
+
+.description-container{
+    min-height: 10rem;
+}
+
+.form-floating{
+    textarea{
+        min-height: 8rem;
+    }
 }

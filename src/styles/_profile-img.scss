@@ -1,4 +1,6 @@
 .profile-img{
+    min-height: 4rem;
+    min-width: 4rem;
     width: 5vw;
     height: 5vw;
     border-radius: 50%;
@@ -12,6 +14,8 @@
 }
 
 .profile-img-parent{
+    min-height: 4rem;
+    min-width: 4rem;
     border-style: none;
     height: 5vw;
     width: 5vw;

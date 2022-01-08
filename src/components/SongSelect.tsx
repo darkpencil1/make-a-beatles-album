@@ -28,39 +28,33 @@ export default function SongSelect() {
 
  
     return (
-        <div className='col-5'>
-            <div className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle w-75" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Song select
-                </button>
-                <ul className="dropdown-menu" id="song-dropdown" aria-labelledby="dropdownMenuButton1">
-                    <li className='dropdown-item no-hover'>
-                        <input className="form-control" id="myInput" type="text" placeholder="Search.." onChange={(e)=>{setSearchKey(e.target.value)}}></input>
-                    </li>
-                    <li><hr className="dropdown-divider"/></li>
-                    {songs.map((song: string, index: number)=>{
-                        
-                        //if(songList)
-                        //Limit searches based on input text
-                        let word = ""
-                        for(var i = 0; i< searchKey.length; i++){
-                            word += song.charAt(i)
-                        }
-                        return(
-                            
-                            word.toUpperCase() == searchKey.toUpperCase() ? 
-                            <li key={index}><Link className="dropdown-item" to="" onClick={()=> handleSongClick(song)}>{song}</Link></li>
-                            :
-                            <></>
-                        )
-                    })}
+        <div className='col-5 bg-light song-container container-md w-50 border border-secondary rounded p-2 mx-3'>
+            <label className=''>Songs</label>
+            <ul className="list-group p-0 align-self-start song-menu">
+                <li className='no-hover list-group-item'>
+                    <input className="form-control" id="myInput" type="text" placeholder="Search.." onChange={(e)=>{setSearchKey(e.target.value)}}></input>
+                </li>
 
-                </ul>
-            </div>
-            
-        </div>
-     
-    
+                {songs.map((song: string, index: number)=>{
                     
+                    //if(songList)
+                    //Limit searches based on input text
+                    let word = ""
+                    for(var i = 0; i< searchKey.length; i++){
+                        word += song.charAt(i)
+                    }
+                    return(
+                        
+                        word.toUpperCase() == searchKey.toUpperCase() ? 
+                        <li className='list-group-item' key={index}><Link className="song" to="" onClick={()=> handleSongClick(song)}>{song}</Link></li>
+                        :
+                        <></>
+                    )
+                })}
+
+            </ul>
+        
+        </div>
+           
     )
 }
