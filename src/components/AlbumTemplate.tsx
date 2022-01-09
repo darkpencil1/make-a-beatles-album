@@ -14,6 +14,7 @@ export default function AlbumTemplate() {
 
     const [albumName, setAlbumName] = useState('')
     const [songIndex, setSongIndex] = useState<number>(0)
+    const [listClass, setListClass] = useState('list-group-item list-group-item-action')
     const selected = useSelector((state: RootState)=>state.album.value)
     const dispatch = useDispatch()
     
@@ -31,14 +32,29 @@ export default function AlbumTemplate() {
             <ol className='list-group'>
                 {
                     selected.songs.map((song, index)=>{
+                       if(index == songIndex){
+                           return(
+                               <button type="button" className="list-group-item list-group-item-action active" key= {index} onClick={()=>{setSongIndex(index)}}>
+                                   <div className='row'>
+                                       <span className='col-auto me-auto'>{song.name}</span>
+                                       <span className='text-right text-muted col-auto'>{song.artist}</span>
+                                   </div>
+                               </button>
+                              
+                              )
+
+                       }else{
                         return(
-                            <li className='list-group-item' draggable="true" aria-grabbed="false" key= {index} onClick={()=>{setSongIndex(index)}}>
-                                <div className='row '>
+                            <button type="button" className="list-group-item list-group-item-action" key= {index} onClick={()=>{setSongIndex(index)}}>
+                                <div className='row'>
                                     <span className='col-auto me-auto'>{song.name}</span>
                                     <span className='text-right text-muted col-auto'>{song.artist}</span>
                                 </div>
-                            </li> 
+                            </button>
+                           
                            )
+                       }
+                        
                      }      
                     )}
             </ol>

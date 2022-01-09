@@ -10,6 +10,7 @@ export default function Keywords() {
     const dispatch = useDispatch()
 
     useEffect(()=>{
+        console.log("keywords when dispatching:", keywords)
         dispatch(updateKeywords(keywords))
     },[keywords])
 
@@ -25,11 +26,16 @@ export default function Keywords() {
         
     }
 
+    const onEnterPress = () =>{
+        setKeywords(keywords => [...keywords, inputValue])
+        setInputValue("")
+    }
+
     return (
         <div className='col-auto bg-light border border-secondary rounded p-2 mx-3'>
             
                 <label htmlFor="floatingInputValue">Write keywords describing your album</label>
-                <input type="text" className="form-control" id="floatingInputValue" placeholder="Exciting" value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}} onKeyPress={(e)=>{e.key == "Enter" ? setKeywords(keywords => [...keywords, inputValue]) : null}}/>
+                <input type="text" className="form-control" id="floatingInputValue" placeholder="Exciting" value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}} onKeyPress={(e)=>{e.key == "Enter" ? onEnterPress() : null}}/>
             
             <div className='container row cols-2 m-2 p-0'>
                 {

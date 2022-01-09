@@ -6,8 +6,10 @@ import lennon from "../assets/img/lennon.jpg"
 
 type Album = {
     id: string
-    name: string,
+    albumName: string,
     songs: string[],
+    description: string,
+    keywords: string[]
 }
 
 type AlbumCollection = {
@@ -23,7 +25,7 @@ export default function Albums() {
     useEffect(() => {
         axios.get("http://localhost:5000/api/albums")
       .then((res) => {
-        //console.log(res.data.data)
+        console.log(res.data.data)
         setAlbums(res.data.data)
       })
       .catch((err)=> console.log(err))
@@ -59,21 +61,18 @@ export default function Albums() {
                                     <div className='col-md-6'>
                                         {/*keyword container */}
                                         <div className='container row cols-md-2 gy-2'>
-                                            <span className='keyword-in-album col-auto mx-2 text-center'>Keyword</span>
-                                            <span className='keyword-in-album col-auto mx-2 text-center'>Keyword</span>
-                                            <span className='keyword-in-album col-auto mx-2 text-center'>Keyword</span>
-                                            <span className='keyword-in-album col-auto mx-2 text-center'>Keyword</span>
-                                            <span className='keyword-in-album col-auto mx-2 text-center'>Keyword</span>
-                                            <span className='keyword-in-album col-auto mx-2 text-center'>Keyword</span>
+                                            
+                                            {album.keywords.map((keyword:string, i:number)=>{
+                                                return(
+                                                    <span className='keyword-in-album col-auto mx-2 text-center' key={i}>{keyword}</span>
+                                                )
+                                            })}
                                         </div>
                                         {/*description container */}
                                         <div className='rounded border m-2 p-2'>
                                             <label><h5>Description</h5></label>
                                             <p>
-
-                                            Lore Lore Lore Lennon Beatles Ringo Ringo Lore Lore Lore Lennon Beatles Ringo RingoLore Lore Lore Lennon Beatles Ringo RingoLore Lore Lore Lennon Beatles Ringo Ringo
-                                            Lore Lore Lore Lennon Beatles Ringo Ringo Lore Lore Lore Lennon Beatles Ringo RingoLore Lore Lore Lennon Beatles Ringo RingoLore Lore Lore Lennon Beatles Ringo Ringo
-                                            Lore Lore Lore Lennon Beatles Ringo Ringo Lore Lore Lore Lennon Beatles Ringo RingoLore Lore Lore Lennon Beatles Ringo RingoLore Lore Lore Lennon Beatles Ringo Ringo
+                                                {album.description}
                                             </p>
                                         </div>
                                     </div>
@@ -82,9 +81,13 @@ export default function Albums() {
                                         <ol className='list-group m-3'>
                                             <h4 className="list-group-item w-100 albumName rounded-top">{album.name}</h4>
                                             {
-                                                album.songs.map((song:string[], i:number)=>{
+                                                album.songs.map((entry:any, i:number)=>{
                                                     return(
-                                                            <li className="mb-0 list-group-item" key={i}>{song}</li>
+                                                        <div className='row mb-0 list-group-item' key={i}>
+                                                            <span className='col-auto me-auto'>{entry.name}</span>
+                                                            <span className='text-right text-muted col-auto'>{entry.artist}</span>
+                                                        </div>
+                                                            
                                                     )
                                                     
                                                 })

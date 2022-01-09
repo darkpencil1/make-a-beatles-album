@@ -14,7 +14,7 @@ interface AlbumState {
     }
 }
   
-const initialState = { value: {songs: [{name: "moikka", artist: "Lennon"}, {name: "Sunshine", artist: "Harrison"}, {name: "London", artist: "McCartney"}], albumName: "", keywords: [""], description: ""} } as AlbumState
+const initialState = { value: {songs: [], albumName: "", keywords: [], description: ""} } as AlbumState
 
 export const albumSlice = createSlice({
     name: "album",
@@ -22,6 +22,7 @@ export const albumSlice = createSlice({
     reducers: {
         addSong: (state, action) => {
             state.value.songs.push(action.payload)
+            console.log("you added a song: ", action.payload, "the state.value:", state.value)
         },
         removeAlbum: (state) => {
             state = initialState
@@ -55,6 +56,7 @@ export const albumSlice = createSlice({
             state.value.albumName = action.payload
         },
         updateKeywords: (state,action)=>{
+            console.log("action.payload when updating keywords: ", action.payload)
             state.value.keywords = action.payload
         },
         addDescription: (state, action) =>{

@@ -23,6 +23,7 @@ import harrison from "../assets/img/harrison-profile.png"
 import starr from "../assets/img/starr-profile.png"
 import AlbumDescription from './AlbumDescription';
 import Keywords from './Keywords';
+import SubmitButton from './SubmitButton';
 
 
 
@@ -51,15 +52,18 @@ const Tracks = () => {
 		})
 		.catch((err)=> console.log(err))
 
+	
+
 
 	},[])
 
 
 
 	
-	const sentTracks = (activeTracks:string[]) =>{
+	const sentTracks = (activeTracks:string[], artist:string) =>{
 		try{
 			dispatch(removeSelectedSongs())
+			dispatch(changeArtist(artist))
 			dispatch(changeSongs(activeTracks))
 
 		}catch(err){
@@ -72,22 +76,23 @@ const Tracks = () => {
 		<div className='row row-cols-md-2 row-cols-sm-1 row-cols-lg-2 gy-4 justify-content-center bg-light border border-secondary rounded'>
 			<div className='col-12'>
 				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
-					<img className='profile-img p-1' src={lennon} onClick={()=>sentTracks(johnTracks)}></img>
+					<img className='profile-img p-1' src={lennon} onClick={()=>sentTracks(johnTracks, "Lennon")}></img>
 				</button>
 				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
-					<img className='profile-img p-1' src={mccartney} onClick={()=>sentTracks(paulTracks)}></img>
+					<img className='profile-img p-1' src={mccartney} onClick={()=>sentTracks(paulTracks, "McCartney")}></img>
 				</button>
 				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
-					<img className='profile-img p-1' src={harrison} onClick={()=>sentTracks(georgeTracks)}></img>
+					<img className='profile-img p-1' src={harrison} onClick={()=>sentTracks(georgeTracks, "Harrison")}></img>
 				</button>
 				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
-					<img className='profile-img p-1' src={starr} onClick={()=>sentTracks(ringoTracks)}></img>  
+					<img className='profile-img p-1' src={starr} onClick={()=>sentTracks(ringoTracks, "Starr")}></img>  
 				</button>
         	 </div>
 			<SongSelect />
 			<AlbumTemplate/>
 			<Keywords/>
 			<AlbumDescription/>
+			<SubmitButton/>
 
 		</div>
 

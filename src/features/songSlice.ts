@@ -8,11 +8,6 @@ interface SongsState {
   
 const initialState = { value: [] } as SongsState
 
-/*const initialState = {
-    value: {
-        songs: [""]
-    }
-}*/
 
 export const songSlice = createSlice({
     name: "songs",
