@@ -12,12 +12,11 @@ export default function AlbumDescription() {
     const dispatch = useDispatch()
 
     const sendDescription = (desc:string) =>{
-        setDescription(desc)
-        dispatch(addDescription(description))
+        dispatch(addDescription(desc))
     }
 
     return (
-        <div className='col-8 col-md-8 p-0'>
+        <div className='col col-xs-12 p-0 mx-2'>
             <div className='description-container bg-light border border-secondary rounded p-2'>
                 <label>Write a short description for your album</label>
                 <div className="form-floating">

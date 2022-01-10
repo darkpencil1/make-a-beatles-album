@@ -42,17 +42,12 @@ async function getToken(){
 				'method': 'POST',
 				'headers': {
 						'Content-Type':'application/x-www-form-urlencoded',
-						'Authorization': 'Basic ' + Buffer.from('e2f35e74a7424593b88a3ed41ebf40f5' + ':' + 'd6e84de876824e2c9d80990a78809068').toString('base64'),
+						'Authorization': 'Basic ' + Buffer.from(process.env.CLIENT_ID + ':' + process.env.CLIENT_SECRET).toString('base64'),
 				},
 				'data': 'grant_type=client_credentials'
 			}).then(tokenresponse => {
                 token = tokenresponse.data.access_token
-                if(token == tokenresponse.data.access_token){
-                    console.log("tokens are identical")
-                }else{
-                    console.log("tokens are not identical")
-                }
-                getAlbums()
+                artists.forEach(albumRetriever)
 			
 			}).catch(error=> console.log(error))
 }
@@ -98,12 +93,6 @@ async function albumRetriever(artist, index){
 		})
 		.catch(error=> console.log(error))
 
-}
-async function getAlbums(){
-  
-    artists.forEach(albumRetriever)
-
-    
 }
 
 async function retrieveTracks(album,index, artistName){
@@ -164,17 +153,12 @@ if(process.env.NODE_ENV === 'production'){
 app.get("/api/albums", async (req, res)=>{
   
     try{
-      
         const albums = await db.collection('albums').find().toArray()
         res.status(200).json({success:true, data: albums})
 
     }catch(err){
         res.status(400).json({success: false, msg: `Service currently unavailable, err: ${err}`})
     }
-})
-
-app.get("/api/user", (req, res)=>{
-    res.status(200).json({success:true, msg: "moi"})
 })
 
 app.get("/api/tracks", async (req, res)=>{
@@ -186,40 +170,17 @@ app.get("/api/tracks", async (req, res)=>{
     }
 })
 
-
-app.post("/api/user", async (req, res)=>{
-    const {
-        body: {songs, albumName, keywords, description}
-    } = req
-    console.log("req.body:", req.body)
-    res.status(200).json({success:true, msg: "You posted succesfully!"})
-})
-
 app.post('/api/albums', async (req,res)=>{
     try{      
         const {
             body: {songs, albumName, keywords, description}
         } = req
       
-        await db.collection('albums').insertOne({"_id": new ObjectID(), name: albumName, songs: songs, description: description, keywords: keywords})
+        //await db.collection('albums').insertOne({"_id": new ObjectID(), name: albumName, songs: songs, description: description, keywords: keywords})
         res.status(200).json({success:true, msg: "Data posted succesfully to database!"})
     }catch(err){
         res.status(400).json({success: false, msg: `Service currently unavailable, err: ${err}`})
     }
 })
-app.post('/api', async (req, res)=>{
-    try{
-        const {
-            
-            body: {name}
-        } = req
-        
-        await db.collection('customers').insertOne({"_id": new ObjectID(), ...req.body})
-        res.status(200).json({success:true, msg: 'Data sent to database succesfully.'})
-    }catch(err){
-        res.status(400).json({success: false, msg: `Service currently unavailable, err: ${err}`})
-    }
-})
-
 
 module.exports = app

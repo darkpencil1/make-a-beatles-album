@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState} from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { Buffer } from 'buffer';
 
 //Redux
 import { useDispatch } from 'react-redux';
@@ -13,7 +11,6 @@ import { RootState } from "../app/store";
 import SongSelect from './SongSelect';
 import { changeArtist } from '../features/artistSlice';
 import AlbumTemplate from './AlbumTemplate';
-import { addSong} from '../features/albumSlice';
 import { removeSelectedSongs } from '../features/songSlice';
 
 //images
@@ -37,7 +34,6 @@ const Tracks = () => {
 
 	//redux
 	const dispatch = useDispatch();
-	const artistStore = useSelector((state: RootState)=>state.artist.value.artist)
 
 	useEffect(()=>{
 
@@ -52,14 +48,8 @@ const Tracks = () => {
 		})
 		.catch((err)=> console.log(err))
 
-	
-
-
 	},[])
 
-
-
-	
 	const sentTracks = (activeTracks:string[], artist:string) =>{
 		try{
 			dispatch(removeSelectedSongs())
@@ -70,10 +60,9 @@ const Tracks = () => {
 			console.log("Tracks not ready yet!")
 		}
 	}
-	
 
 	return(
-		<div className='row row-cols-md-2 row-cols-sm-1 row-cols-lg-2 gy-4 justify-content-center bg-light border border-secondary rounded'>
+		<div className='row gy-4 justify-content-around bg-light border border-secondary rounded m-3'>
 			<div className='col-12'>
 				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
 					<img className='profile-img p-1' src={lennon} onClick={()=>sentTracks(johnTracks, "Lennon")}></img>
@@ -88,8 +77,10 @@ const Tracks = () => {
 					<img className='profile-img p-1' src={starr} onClick={()=>sentTracks(ringoTracks, "Starr")}></img>  
 				</button>
         	 </div>
+
 			<SongSelect />
 			<AlbumTemplate/>
+			<div className="w-100"></div>
 			<Keywords/>
 			<AlbumDescription/>
 			<SubmitButton/>

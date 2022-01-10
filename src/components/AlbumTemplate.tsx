@@ -26,7 +26,7 @@ export default function AlbumTemplate() {
     }
 
     return (
-        <div className='col albumContainer container-md w-50 border border-secondary rounded p-2 mx-3'>
+        <div className='col-8 col-md-5 albumContainer container-md w-50 border border-secondary rounded p-2 mx-3'>
             <label className="form-label">Album name</label>
             <input className="form-control" type='text' placeholder="Your cool name for a Beatles album" onChange={(e)=>{dispatch(changeAlbumName(e.target.value))}}></input>
             <ol className='list-group'>

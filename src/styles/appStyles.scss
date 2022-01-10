@@ -57,9 +57,7 @@ $primary-color: #7464a1;
     padding: 10px;
     border-color: $primary-color;
     border-width: 5px;
-    input{
-        background-color: rgba(var(--bs-light-rgb));
-    }
+    
 }
 
 .singleAlbumContainer{
@@ -100,3 +98,4 @@ $primary-color: #7464a1;
     min-height: 25rem;
     max-height: 25rem;
 }
+

@@ -1,11 +1,25 @@
 $round-border: 20px 50px 50px 20px;
 $primary-color: #7464a1;
 
+.btn{
+    box-shadow: 0 0.1875rem 0.1875rem 0 rgb(0 0 0 / 10%)
+}
+
+.keyword-container{
+    
+    max-height: 25rem;
+}
+
 .keyword{
     border-radius: 100px;
     background-color: #67c29c6b;
+    box-shadow: none;
+    button{
+        box-shadow: none !important;
+    }
 
 }
+
 
 .btn-circle{
     border-radius: $round-border!important;
@@ -19,5 +33,5 @@ $primary-color: #7464a1;
 
 .keyword-in-album{
     border-radius: 50px;
-    background-color: $primary-color;
+    background-color: #67c29c6b;
 }

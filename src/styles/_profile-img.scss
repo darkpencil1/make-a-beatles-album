@@ -1,3 +1,5 @@
+$primary-color: #7464a1;
+
 .profile-img{
     min-height: 4rem;
     min-width: 4rem;
@@ -7,7 +9,7 @@
     object-fit: cover;
     
     &:hover{
-        box-shadow: 0 0 20px #7464a1;
+        box-shadow: 0 0 20px $primary-color;
     }
     
 
@@ -22,8 +24,8 @@
     border-radius: 50%;
     &:focus{
         
-        border-color: #7464a1;
-        box-shadow: 0 0 20px #ff4800;
+        border-color: $primary-color;
+        box-shadow: 0 0 20px $primary-color;
     }
     
 }
