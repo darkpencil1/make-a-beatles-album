@@ -70,7 +70,7 @@ module.exports = {
                     options: {
                         name: '[name].[hash].jpg',
                         outputPath: 'assets/img/',
-                        publicPath: '../assets/img/'
+                        publicPath: './assets/img/'
                     }
                   },
                 ],
