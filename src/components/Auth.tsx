@@ -19,7 +19,7 @@ import SubmitButton from './SubmitButton';
 //images
 import lennon from "./img/lennonprofile.png"
 import mccartney from "./img/mccartney-profile.png"
-import harrison from "./img/harrison-profile.png"
+import harrison from "../assets/img/harrison-profile.png"
 import starr from "./img/starr-profile.png"
 
 
@@ -87,7 +87,9 @@ const Tracks = () => {
 
 			<SongSelect />
 			<AlbumTemplate/>
-			<div className="w-100"></div>
+			<div className="w-100">
+
+			</div>
 			<Keywords/>
 			<AlbumDescription/>
 			<SubmitButton/>
