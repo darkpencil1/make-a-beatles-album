@@ -19,7 +19,7 @@ import SubmitButton from './SubmitButton';
 //images
 import lennon from "./img/lennonprofile.png"
 import mccartney from "./img/mccartney-profile.png"
-import harrison from "../assets/img/harrison-profile.png"
+import harrison from "./img/lennonprofile.png"
 import starr from "./img/starr-profile.png"
 
 
