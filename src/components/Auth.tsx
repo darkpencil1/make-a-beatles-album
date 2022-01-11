@@ -17,7 +17,7 @@ import Keywords from './Keywords';
 import SubmitButton from './SubmitButton';
 
 //images
-import lennon from "../assets/img/lennon-profile.png"
+import lennon from "../assets/img/lennonprofile.png"
 import mccartney from "../assets/img/mccartney-profile.png"
 import harrison from "../assets/img/harrison-profile.png"
 import starr from "../assets/img/starr-profile.png"
