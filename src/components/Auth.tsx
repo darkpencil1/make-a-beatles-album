@@ -6,21 +6,22 @@ import { useDispatch } from 'react-redux';
 import { changeSongs } from '../features/songSlice';
 import { useSelector } from 'react-redux';
 import { RootState } from "../app/store";
+import { removeSelectedSongs} from '../features/songSlice';
+import { changeArtist } from '../features/artistSlice';
 
 //Re-usable components
 import SongSelect from './SongSelect';
-import { changeArtist } from '../features/artistSlice';
 import AlbumTemplate from './AlbumTemplate';
-import { removeSelectedSongs } from '../features/songSlice';
+import AlbumDescription from './AlbumDescription';
+import Keywords from './Keywords';
+import SubmitButton from './SubmitButton';
 
 //images
 import lennon from "../assets/img/lennon-profile.png"
 import mccartney from "../assets/img/mccartney-profile.png"
 import harrison from "../assets/img/harrison-profile.png"
 import starr from "../assets/img/starr-profile.png"
-import AlbumDescription from './AlbumDescription';
-import Keywords from './Keywords';
-import SubmitButton from './SubmitButton';
+
 
 
 
@@ -36,9 +37,16 @@ const Tracks = () => {
 	const dispatch = useDispatch();
 
 	useEffect(()=>{
-
+		let serverUrl = "http://localhost:5000/api/tracks"
+		//Assign server url based on development mode
+        if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+            serverUrl = "http://localhost:5000/api/tracks"
+		
+		} else {
+           serverUrl = "/api/tracks"
+		}
 		// Api call for retrieving tracks
-		axios.get("http://localhost:5000/api/tracks")
+		axios.get(serverUrl)
 		.then((res) => {
 			console.log(res.data.data)
 			setJohnTracks(res.data.data.john)

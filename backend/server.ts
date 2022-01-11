@@ -176,7 +176,7 @@ app.post('/api/albums', async (req,res)=>{
             body: {songs, albumName, keywords, description}
         } = req
       
-        //await db.collection('albums').insertOne({"_id": new ObjectID(), name: albumName, songs: songs, description: description, keywords: keywords})
+        await db.collection('albums').insertOne({"_id": new ObjectID(), name: albumName, songs: songs, description: description, keywords: keywords})
         res.status(200).json({success:true, msg: "Data posted succesfully to database!"})
     }catch(err){
         res.status(400).json({success: false, msg: `Service currently unavailable, err: ${err}`})

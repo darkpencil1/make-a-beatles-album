@@ -17,20 +17,20 @@ export default function AlertModal(props:Props) {
                 </div>
                 <div className="modal-body">
                     <ul>
-                        {
+                       
+                        {   props.messages.length == 0 ?
                             <li>
                                 Your album has been submitted. Thank you!
                             </li>
-                        }
-                        {/*
+                            :
                             props.messages.map((message:string, index:number)=>{
                                 return(
                                     props.messages.indexOf(message) < index 
                                 ?
                                 
-                                    <li key={index}>
-                                        {message}
-                                    </li>
+                                    <>
+                                    
+                                    </>
                                 
                                 :
                                 
@@ -40,7 +40,7 @@ export default function AlertModal(props:Props) {
                                 
                             )
                         })
-                    */}
+                    }
 
                     </ul>
                 </div>

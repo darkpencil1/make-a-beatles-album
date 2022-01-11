@@ -14,12 +14,20 @@ export default function Albums() {
     const [albums, setAlbums] = useState<Album[]>([])
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/albums")
-      .then((res) => {
-        console.log(res.data.data)
-        setAlbums(res.data.data)
-      })
-      .catch((err)=> console.log(err))
+        let serverUrl = "http://localhost:5000/api/albums"
+        if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+            serverUrl = "http://localhost:5000/api/albums"
+		
+		} else {
+           serverUrl = "/api/albums"
+		}
+
+        axios.get(serverUrl)
+            .then((res) => {
+                setAlbums(res.data.data)
+            })
+            .catch((err)=> console.log(err))
+        
 
     }, [])
     
