@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import {HashLink} from 'react-router-hash-link'
-import Tracks from '../components/Auth'
 import AlbumMaker from './AlbumMaker'
 import Albums from './Albums'
 
