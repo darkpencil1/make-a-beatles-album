@@ -40,7 +40,7 @@ $primary-color: #7464a1;
 }*/
 
 .masthead{
-    background-image: url("../assets/img/lennon.jpg");
+    
     object-fit: cover;
     h1{
         background:none;
@@ -61,7 +61,7 @@ $primary-color: #7464a1;
 }
 
 .singleAlbumContainer{
-  background-image: url("../assets/img/lennon.jpg"); /* The image used */
+
   background-color: #cccccc; /* Used if the image is unavailable */
   //height: 500px; /* You must set a specified height */
   background-position: center; /* Center the image */
