@@ -17,10 +17,10 @@ import Keywords from './Keywords';
 import SubmitButton from './SubmitButton';
 
 //images
-import lennon from "../assets/img/lennonprofile.png"
-import mccartney from "../assets/img/mccartney-profile.png"
-import harrison from "../assets/img/harrison-profile.png"
-import starr from "../assets/img/starr-profile.png"
+import lennon from "./img/lennonprofile.png"
+import mccartney from "./img/mccartney-profile.png"
+import harrison from "./img/harrison-profile.png"
+import starr from "./img/starr-profile.png"
 
 
 
