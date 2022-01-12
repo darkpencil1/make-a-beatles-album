@@ -8,11 +8,10 @@ import { RootState } from '../app/store'
 import { useSelector } from 'react-redux'
 
 //images 
-import img1 from "../assets/img/ipad.png"
-import john from "../assets/img/lennon.jpg"
-import paul from "../assets/img/mccartney.jpg"
-import george from "../assets/img/harrison.jpg"
-import ringo from "../assets/img/starr.jpg"
+import john from "./img/lennon.jpg"
+import paul from "./img/mccartney.jpg"
+import george from "./img/harrison.jpg"
+import ringo from "./img/starr.jpg"
 
 export default function AlbumMaker() {
 
