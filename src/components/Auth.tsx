@@ -4,8 +4,6 @@ import axios from 'axios';
 //Redux
 import { useDispatch } from 'react-redux';
 import { changeSongs } from '../features/songSlice';
-import { useSelector } from 'react-redux';
-import { RootState } from "../app/store";
 import { removeSelectedSongs} from '../features/songSlice';
 import { changeArtist } from '../features/artistSlice';
 
@@ -21,6 +19,7 @@ import lennon from "../assets/img/lennonprofile.png"
 import mccartney from "../assets/img/mccartney-profile.png"
 import harrison from "../assets/img/harrison-profile.png"
 import starr from "../assets/img/starr-profile.png"
+
 
 
 
