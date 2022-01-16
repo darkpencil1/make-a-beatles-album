@@ -72,16 +72,16 @@ const Tracks = () => {
 		<div className='row gy-4 justify-content-around bg-light border border-secondary rounded m-3'>
 			<div className='col-12'>
 				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
-					<img className='profile-img p-1' src={lennon} onClick={()=>sentTracks(johnTracks, "Lennon")}></img>
+					<img className='profile-img p-1' src={lennon} alt='' onClick={()=>sentTracks(johnTracks, "Lennon")}></img>
 				</button>
 				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
-					<img className='profile-img p-1' src={mccartney} onClick={()=>sentTracks(paulTracks, "McCartney")}></img>
+					<img className='profile-img p-1' src={mccartney} alt='' onClick={()=>sentTracks(paulTracks, "McCartney")}></img>
 				</button>
 				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
-					<img className='profile-img p-1' src={harrison} onClick={()=>sentTracks(georgeTracks, "Harrison")}></img>
+					<img className='profile-img p-1' src={harrison} alt='' onClick={()=>sentTracks(georgeTracks, "Harrison")}></img>
 				</button>
 				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
-					<img className='profile-img p-1' src={starr} onClick={()=>sentTracks(ringoTracks, "Starr")}></img>  
+					<img className='profile-img p-1' src={starr} alt='' onClick={()=>sentTracks(ringoTracks, "Starr")}></img>  
 				</button>
         	 </div>
 
