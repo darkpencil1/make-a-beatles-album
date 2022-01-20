@@ -138,19 +138,14 @@ getToken();
 
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('dist'))
-
     
+    app.use(express.static('dist'))
+    //in production sends index.html file from dist folder
     app.get("*", (req, res) => {
         res.sendFile(path.resolve(__dirname, "../dist", "index.html"))
-       
     })
 }
-  
-/*app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../dist", "index.html"))
-   
-})*/
+
 
 app.get("/api/albums", async (req, res)=>{
   

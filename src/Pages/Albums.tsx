@@ -19,7 +19,7 @@ export default function Albums() {
             serverUrl = "http://localhost:5000/api/albums"
 		
 		} else {
-           serverUrl = "/api/albums"
+           serverUrl = "https://make-a-beatles-album.herokuapp.com/api/albums"
 		}
 
         axios.get(serverUrl)

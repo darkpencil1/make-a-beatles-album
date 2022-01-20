@@ -41,7 +41,7 @@ const Tracks = () => {
             serverUrl = "http://localhost:5000/api/tracks"
 		
 		} else {
-           serverUrl = "/api/tracks"
+           serverUrl = "https://make-a-beatles-album.herokuapp.com/api/tracks"
 		}
 		// Api call for retrieving tracks
 		axios.get(serverUrl)

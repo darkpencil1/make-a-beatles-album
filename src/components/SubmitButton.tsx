@@ -37,7 +37,7 @@ export default function SubmitButton() {
             serverUrl = "http://localhost:5000/api/albums"
 		
 		} else {
-           serverUrl = "/api/albums"
+           serverUrl = "https://make-a-beatles-album.herokuapp.com/api/albums"
 		}
         //Check if all the data is in place
         
