@@ -45,6 +45,7 @@ export default function Albums() {
                         </div>
                     </div>
                     {
+                        albums != null || albums != [] || albums != undefined ?
                         albums.map((album:any, index:number)=>{
                             return(
                                 <div className="gx-0 gy-4 mb-5 mb-lg-0 row rounded border border-4 container" key={index} >
@@ -90,6 +91,8 @@ export default function Albums() {
                                 </div>
                             )
                         })
+                        :
+                        <></>
                     }
                 </div>
             </section>

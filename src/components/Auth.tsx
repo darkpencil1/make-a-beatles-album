@@ -46,7 +46,7 @@ const Tracks = () => {
 		// Api call for retrieving tracks
 		axios.get(serverUrl)
 		.then((res) => {
-			console.log(res.data.data)
+			console.log("res.data.data", res.data.data)
 			setJohnTracks(res.data.data.john)
 			setPaulTracks(res.data.data.paul)
 			setGeorgeTracks(res.data.data.george)
