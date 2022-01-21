@@ -22,7 +22,7 @@ export const albumSlice = createSlice({
     reducers: {
         addSong: (state, action) => {
             state.value.songs.push(action.payload)
-            console.log("you added a song: ", action.payload, "the state.value:", state.value)
+            
         },
         removeAlbum: (state) => {
             state = initialState
@@ -56,7 +56,6 @@ export const albumSlice = createSlice({
             state.value.albumName = action.payload
         },
         updateKeywords: (state,action)=>{
-            console.log("action.payload when updating keywords: ", action.payload)
             state.value.keywords = action.payload
         },
         addDescription: (state, action) =>{
