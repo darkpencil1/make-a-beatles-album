@@ -26,7 +26,7 @@ export default function AlbumTemplate() {
     }
 
     return (
-        <div className='col-8 col-md-5 albumContainer container-md w-50 border border-secondary rounded p-2 mx-3'>
+        <div className='col-lg-5 col-sm-10 col-11 albumContainer container-md border border-secondary rounded p-2 mx-3'>
             <label className="form-label">Album name</label>
             <input className="form-control" type='text' placeholder="Your cool name for a Beatles album" onChange={(e)=>{dispatch(changeAlbumName(e.target.value))}}></input>
             <ol className='list-group'>
@@ -58,7 +58,7 @@ export default function AlbumTemplate() {
                      }      
                     )}
             </ol>
-             <div className='btn-group col-3 col-md-3 col-sm-5 ms-auto my-2'>
+            <div className='btn-group ms-auto my-2'>
                 <button type="button" className="btn btn-sm btn-outline-secondary p-1" onClick={()=>{handleMoveClick(moveSongUp,-1)}}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
                     <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"></path>
@@ -78,7 +78,6 @@ export default function AlbumTemplate() {
                     </svg>
                 </button>
             </div>
-           
         </div>
     )
 }

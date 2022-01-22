@@ -16,7 +16,7 @@ export default function AlbumDescription() {
     }
 
     return (
-        <div className='col col-xs-12 p-0 mx-2'>
+        <div className='col-md-5 col-11 p-0 mx-2'>
             <div className='description-container bg-light border border-secondary rounded p-2'>
                 <label>Write a short description for your album</label>
                 <div className="form-floating">

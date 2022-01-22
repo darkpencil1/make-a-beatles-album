@@ -20,7 +20,7 @@ export default function SongSelect() {
 
  
     return (
-        <div className='col-12 col-md-5 bg-light song-container container-md w-50 border border-secondary rounded p-2 mx-3'>
+        <div className='col-lg-5 col-sm-10 col-11 bg-light song-container container-md border border-secondary rounded p-2 mx-3'>
             <label>Songs</label>
             <input className="form-control" id="myInput" type="text" placeholder="Search.." onChange={(e)=>{setSearchKey(e.target.value)}}></input>
             <ul className="list-group p-0 align-self-start song-menu">

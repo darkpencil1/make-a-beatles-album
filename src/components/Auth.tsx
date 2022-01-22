@@ -71,18 +71,18 @@ const Tracks = () => {
 	}
 
 	return(
-		<div className='row gy-4 justify-content-around bg-light border border-secondary rounded m-3'>
-			<div className='col-12'>
-				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
+		<div className='row gy-4 justify-content-around bg-light border border-secondary rounded my-3 mx-sm-5 mx-1'>
+			<div className='row justify-content-center'>
+				<button className='col-sm-5 col-md-6 col-6 profile-img-parent mx-4 my-3 p-0'>
 					<img className='profile-img p-1' src={lennon} alt='' onClick={()=>sentTracks(johnTracks, "Lennon")}></img>
 				</button>
-				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
+				<button className='col-sm-5 col-md-6 col-6 profile-img-parent mx-4 my-3 p-0'>
 					<img className='profile-img p-1' src={mccartney} alt='' onClick={()=>sentTracks(paulTracks, "McCartney")}></img>
 				</button>
-				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
+				<button className='col-sm-5 col-md-6 col-6 profile-img-parent mx-4 my-3 p-0'>
 					<img className='profile-img p-1' src={harrison} alt='' onClick={()=>sentTracks(georgeTracks, "Harrison")}></img>
 				</button>
-				<button className='col-3 profile-img-parent mx-4 my-2 p-0'>
+				<button className='col-sm-5 col-md-6 col-6 profile-img-parent mx-4 my-3 p-0'>
 					<img className='profile-img p-1' src={starr} alt='' onClick={()=>sentTracks(ringoTracks, "Starr")}></img>  
 				</button>
         	 </div>
@@ -90,7 +90,6 @@ const Tracks = () => {
 			<SongSelect />
 			<AlbumTemplate/>
 			<div className="w-100">
-
 			</div>
 			<Keywords/>
 			<AlbumDescription/>

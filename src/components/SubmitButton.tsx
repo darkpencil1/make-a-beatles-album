@@ -82,7 +82,7 @@ export default function SubmitButton() {
 
     return (
         <div className='col-12'>
-            <button className='w-50 btn btn-success web-btn my-4' type='button' data-bs-toggle="modal" data-bs-target="#alertModal" onClick={handleSubmitClick}>Submit</button>
+            <button className='btn btn-success web-btn my-4' type='button' data-bs-toggle="modal" data-bs-target="#alertModal" onClick={handleSubmitClick}>Submit</button>
             <AlertModal messages={modalMessage.messages} header={modalMessage.header}/>
         </div>
     )
