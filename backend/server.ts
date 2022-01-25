@@ -11,6 +11,7 @@ var cors = require('cors')
 const harrison = '7FIoB5PHdrMZVC3q2HE5MS'
 const lennon = "4x1nvY2FN8jxqAFA0DA02H"
 const mccartney = '4STHEaNw4mPZ2tzheohgXB'
+const wings = "3sFhA6G1N0gG1pszb6kk1m"
 const starr = '6DbJi8AcN5ANdtvJcwBSw8'
 const artists = [lennon, mccartney, harrison, starr]
 
@@ -88,6 +89,11 @@ async function albumRetriever(artist, index){
                 albums.ringo = albumList
                 albums.ringo.forEach(album =>{
                     retrieveTracks(album, albums.ringo.indexOf(album), "ringo")
+                })
+            }else if(index == 4){
+                albums.paul = [...albums.paul, ...albumList]
+                albums.paul.forEach(album =>{
+                    retrieveTracks(album, albums.paul.indexOf(album), "paul")
                 })
             }
 		})
